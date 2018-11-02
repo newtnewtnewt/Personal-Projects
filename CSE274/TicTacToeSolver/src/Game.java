@@ -3,6 +3,9 @@ public class Game {
 	ArrayDictionary<Board, Integer> possibleBoards;
 	
 	public Game() {
+		/**
+		 * Creates a Game object, which instantiates the Dictionary of Moves and fills it
+		 */
 		possibleBoards = new ArrayDictionary<Board, Integer>();
 		Board startingBoard = new Board();
 		boardBuilder(startingBoard, 0);
@@ -11,6 +14,10 @@ public class Game {
 	
 
 	public void boardBuilder(Board currentBoard, int chainLink) {
+		/**
+		 * A recursive method that allows for the generation of all possible boards, which are validated 
+		 * within the method.
+		 */
 		
 		if(chainLink == 9) {
 			if(currentBoard.isValidBoard()) {
@@ -56,6 +63,9 @@ public class Game {
 	}
 	
 	public int getBestMove(String board){
+		/**
+		 * @returns the best move given a board as a string @param
+		 */
 		Board testBoard = new Board();
 		
 		for(int i = 0; i < 9; i++) {
