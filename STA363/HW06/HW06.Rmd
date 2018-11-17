@@ -1,0 +1,174 @@
+---
+title: "HW06"
+author: "Noah Dunn"
+date: "November 5, 2018"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(knitr)
+library(GGally)
+library(lindia)
+library(ggfortify)
+
+```
+
+#Problem 1
+
+```{r}
+ratData <- read.csv("ratlethargy.csv", header=TRUE)
+```
+
+##1.
+```{r}
+ratData.anova <- aov(resttime ~ dose, data = ratData)
+summary(ratData.anova)
+autoplot(ratData.anova)
+```
+
+The initial observation is that dose does appear to be a significant predictor for Rest Time in the rats. Normality appears relatively okay, and we shouldn't have to worry about any independence issues as these are all different rats. The equal variance of residuls assumption is however, something to be concerned with. Serious fanning can be observed as the fitted values proceed from left to right.
+
+##2.
+```{r}
+ratData <- ratData %>%
+  mutate(dose = as.factor(dose))
+ggplot(ratData, aes(x=age, y=resttime, color = dose)) +
+  geom_point() + 
+  xlab("Age by Dose") +
+  ylab("Rest time")+
+  geom_smooth(method = lm)
+```
+
+For three of the four levels of dosage(10mg, 20mg, 30mg), rest time appears to increase as the age of a given rat increases. The larger the dose of the drug given, the longer the rest time is at any given age for a rat, among these three groups. The slope of each line, or the rate at which rest time increases as age increases also appear to increase with increasing levels of dosage.
+
+
+##3.
+```{r}
+ratData.ancova <- lm(resttime ~ dose + age + dose:age, data = ratData)
+autoplot(ratData.ancova)
+```
+
+Normality, Equal Variance, and Independence are all now seemingly sound and properly established with little worry. The lack of the interaction term and age is likely what was causing such obscene error in the residuals vs fitted. 
+
+##4. 
+```{r}
+ratData.fakeancova <- lm(resttime ~ dose + age, data = ratData)
+anova(ratData.fakeancova, ratData.ancova)
+```
+
+At a p-value of 2.2 x 10^-16, there is a significant difference between these two models at any reasonable confidence level. For this test, our F statistic value is 84.339, and and our Degrees of freedom for the overall comparison is 3 and 52. 
+
+
+##5. 
+```{r}
+summary(ratData.ancova)
+```
+ 
+Since we have a significant interaction term in the form of age interacting with dose, it would be foolish to make a general statement on the effect of the drug on lethargy without acounting for anything of the other variables. The importance of age and age with the dosage is a part of this statistical analysis that cannot be removed.
+
+##6. 
+```{r}
+predict(ratData.ancova, newdata=data.frame(age = 7, dose = "0"), int="pred")
+```
+
+For a given 7 month old rat who is provided a placebo pill, the predicted amount of sleep a rat will sleep for a 4 hour period is predicted to be between 37.83235 and 71.6062.
+
+```{r}
+predict(ratData.ancova, newdata=data.frame(age = 7, dose = "30"), int="pred")
+```
+
+For a given 7 month old rat who is provided a 30 mg dose, the predicted amount of sleep a rat will sleep for a 4 hour period is predicted to be between 132.3789 and 166.0878.
+
+```{r}
+predict(ratData.ancova, newdata=data.frame(age = 14, dose = "0"), int="pred")
+```
+
+For a given 14 month old rat who is provided a 0 mg dose, the predicted amount of sleep a rat will sleep for a 4 hour period is predicted to be between 40.12521 and 73.85962.
+
+
+```{r}
+predict(ratData.ancova, newdata=data.frame(age = 14, dose = "30"), int="pred")
+```
+
+For a given 14 month old rat who is provided a 0 mg dose, the predicted amount of sleep a rat will sleep for a 4 hour period is predicted to be between 220.3889 and 253.6611.
+
+###Problem 2
+
+##1. 
+
+```{r}
+votingData <- read.csv("election1992.csv")
+```
+
+```{r}
+votingData <- votingData %>%
+  filter(State == "PA" | State == "WV" | State == "OH" | State == "IN" | State == "IL" | State == "MI")
+
+```
+##2.
+
+```{r}
+votingData.fit <- lm(Percent ~ Age + Savings + Income + Poverty +	Veterans + Female +	Population + Nursing + Crime, data = votingData)
+
+step.pick.backwards <- step(votingData.fit, direction="backward")
+```
+
+Savings, Income, Poverty, Veterans, Female, Population, Nursing are all in the model chosen by the backward step-wise variable selection.
+
+##3.
+
+```{r}
+null.fit <- lm(Percent ~ 1, data=votingData)
+step.pick.forward <- step(null.fit, scope=formula(votingData.fit), direction="forward")
+```
+
+Poverty, Veterans, Income, Savings, Population, Nursing, and Female are all chosen by the forward step-wise variable selection. 
+
+
+##4.
+
+```{r}
+summary(step.pick.backwards)
+summary(step.pick.forward)
+```
+
+These models are identical, selecting exactly the same predictors and resulting in an F-statistic of 81.94 on 7 and 457 degrees of freedom and both with a 
+p-value of  < 2.2e^-16.
+
+Compared to the Oct. 31st data, which had two different results on the forward and backward step process, this set produced the same results going both ways. 
+
+##5.
+
+Female is not a significant predictor at a 95% significance level, so we attempt a remodel without it included. 
+
+```{r}
+step.pick.forward.wofemale <- lm(Percent ~ Savings + Income + Poverty +	Veterans + 	Population + Nursing, data = votingData) 
+summary(step.pick.forward.wofemale)  
+```
+
+Now let's try removing the two variables, Income and Nursing, that have become insignifcant as a result of removing female.
+
+```{r}
+step.pick.forward.wofemale.woIandN <- lm(Percent ~ Savings + Poverty +	Veterans + 	Population, data = votingData) 
+summary(step.pick.forward.wofemale.woIandN)  
+```
+
+We lowered our R-Squared by <0.01, made every predictor significant, and our p-value remains at <2.2e ^-16 
+
+##6.
+
+As indicated by the final piece of #5, the model with Savings, Poverty, Veterans, and Population is the simplest model, with nearly the highest Adjusted R-squared value and tied for the lowest p-value. This combination of attributes deems it worthy of being the most appropriate model produced from this process. It is also the only model out of those created with all significant predictors.
+
+```{r}
+predict(step.pick.forward.wofemale.woIandN, newdata=data.frame(Savings = 75000, Poverty = 10, Veterans = 14, Population = 100), int="pred")
+```
+
+The prediction for this particular set of data given the model we have created is a predicted Clinton percent voting in any given generic Rust Belt county at between 25.31752% and 48.90931% 
+
+
+
+
+
+
+
