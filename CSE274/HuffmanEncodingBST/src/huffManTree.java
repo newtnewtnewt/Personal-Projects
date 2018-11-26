@@ -7,7 +7,7 @@ public class huffManTree {
 	
 	/**Create a root node and a list of our nodes we need to populate */
 	Node root;
-	Node[] nodeList = new Node[5];
+	Node[] nodeList = new Node[26];
 	
 	/**The Huffman Tree Constructor creates the tree and fills it with provided Nodes*/ 
 	huffManTree(int[] necessaryNodes, char[] charArray){
