@@ -2,18 +2,18 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 
-public class Set<Item> {
-	LinkedList<Item> setBox;
+public class Set<Item extends Comparable<Item>> {
+	RedBlackBST<Item, Item> setBox;
 	int size;
 	
 	public Set(){
-		setBox =  new LinkedList<Item>();
+		setBox =  new RedBlackBST<Item, Item>();
 		size = 0;
 	}
 	
 	public void add(Item item) {
 		if(!contains(item)) {
-			setBox.add(item);
+			setBox.put(item, item);
 			size++;
 		}
 
@@ -23,7 +23,7 @@ public class Set<Item> {
 		if(!contains(item)) {
 			throw new Exception("Error: Item not contained, cannot be removed!");
 		}
-		setBox.remove(item);
+		setBox.delete(item);
 		size--;
 		 
 	}
@@ -31,11 +31,11 @@ public class Set<Item> {
 	public Set<Item> union(Set<Item> thatSet){
 		Set<Item> unionBox = new Set<Item>();
 		
-		for(int i = 0; i < this.size; i++) {
-			unionBox.add(setBox.get(i));
+		for(Item x: setBox.keys()) {
+			unionBox.add(x);
 		}
-		for(int i = 0; i < thatSet.size(); i++) {
-			unionBox.add(thatSet.setBox.get(i));
+		for(Item x: thatSet.setBox.keys()) {
+			unionBox.add(x);
 		}
 		return unionBox;
 		
@@ -47,9 +47,9 @@ public class Set<Item> {
 			return null;
 		}
 		
-		for(int i = 0; i < this.size; i++) {
-			if(thatSet.contains(setBox.get(i))) {
-				 intersectionBox.add(setBox.get(i));
+		for(Item x: setBox.keys()) {
+			if(thatSet.contains(x)) {
+				 intersectionBox.add(x);
 			}
 			
 		}
@@ -63,9 +63,9 @@ public class Set<Item> {
 			return this;
 		}
 		
-		for(int i = 0; i < this.size; i++) {
-			if(!thatSet.contains(setBox.get(i))) {
-				 differenceBox.add(setBox.get(i));
+		for(Item x: setBox.keys()) {
+			if(!thatSet.contains(x)) {
+				 differenceBox.add(x);
 			}
 			
 		}
@@ -88,20 +88,22 @@ public class Set<Item> {
 	}
 	public int hashCode() {
 		int hash = 0;
-		for(int i = 0; i < size; i++) {
-			hash = hash +  i * (int) setBox.get(i);
+		int i = 0;
+		for(Item x: setBox.keys()) {
+			hash = hash +  i * (int) x;
+			i++;
 		}
 		return hash;
 		
 	}
-	public Iterator<Item> iterator(){
-		return setBox.iterator();
+	public Iterable<Item> iterator(){
+		return setBox.keys();
 		
 	}
 	public String toString() {
 		String total = "";
-		for(int i = 0; i < size(); i++) {
-			total = total + setBox.get(i) + " ";
+		for(Item x: setBox.keys()) {
+			total = total + x + " ";
 		}
 		return total.substring(0, total.length() - 1);
 		
@@ -111,8 +113,8 @@ public class Set<Item> {
 		if(size() != other.size()) {
 			return false;
 		}
-		for(int i = 0; i < size; i++) {
-			if(!other.contains(setBox.get(i))){
+		for(Item x: setBox.keys()) {
+			if(!other.contains(x)){
 				return false;
 			}
 		}
