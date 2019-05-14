@@ -1,0 +1,622 @@
+﻿/* Our CSS Code*/
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+:root {
+    --background: rgba(71,23,246);
+    #f7f5f4
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0E0B16;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+.content {
+    height: 200vh;
+    background-color: #0E0B16;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+/* Navigation Styles Start */
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.logo {
+    font-size: 2em;
+}
+
+    .logo a { /* For the clicking of the logo */
+        text-decoration: none;
+        color: #f7f5f4;
+    }
+
+        .logo a:hover {
+            color: #0E0B16;
+        }
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: #f7f5f4;
+        height: 2px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            content: '';
+            position: absolute;
+        }
+
+        .nav-toggle-label span::before {
+            bottom: 7px;
+        }
+
+        .nav-toggle-label span::after {
+            top: 7px;
+        }
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        margin-top: 2.5em;
+        margin-bottom: 2.5em;
+        margin-left: 1em;
+        text-align: center;
+    }
+
+    nav a {
+        color: #f7f5f4;
+        text-decoration: none;
+        font-size: 2rem;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+        nav a:hover {
+            color: #0E0B16;
+        }
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+    .nav-toggle:checked ~ nav a {
+        opacity: 1;
+        transition: opacity 250ms ease-in-out 250ms;
+    }
+
+.disable {
+    width: 0%;
+    height: 0%;
+}
+
+@media screen and (min-width: 1000px) {
+
+    /* Enable Open GL on desktop */
+
+    .disable {
+        all: unset;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: #f7f5f4;
+        height: 2px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 3em;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        nav a {
+            opacity: 1;
+            position: relative;
+        }
+
+            nav a::before {
+                content: '';
+                display: block;
+                height: 5px;
+                background: #0E0B16;
+                position: absolute;
+                top: -0.75em;
+                left: 0;
+                right: 0;
+                transform: scale(0, 1);
+                transition: transform ease-in-out 250ms;
+            }
+
+            nav a:hover::before {
+                transform: scale(1, 1);
+            }
+}
+
+
+/* End Nav Styles */
+
+.main {
+    padding: 15px;
+    padding-top: 75px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0px;
+    background: #f7f5f4;
+}
+
+.search {
+    width: 100%;
+    height: 60px !important;
+    border-radius: 6px;
+    border: 2px solid #0E0B16;
+}
+
+.searchButton {
+    background-color: #0E0B16;
+    border-radius: 6px;
+    border: 2px solid #0E0B16;
+    color: #f7f5f4;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 50%;
+    height: 50px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+    .searchButton:hover {
+        background-color: #f7f5f4;
+        color: #0E0B16;
+    }
+
+.roomButton {
+    background-color: #0E0B16;
+    border-radius: 6px;
+    border: 2px solid #0E0B16;
+    color: #f7f5f4;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    height: 50px;
+}
+
+    .roomButton:hover {
+        background-color: #f7f5f4;
+        color: #0E0B16;
+    }
+
+.restroomMod {
+    width: 100%;
+}
+
+.shrinkBtn {
+    width: 10%;
+}
+
+.gridMod {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.checkboxes {
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+}
+
+.stats {
+    /*-webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    justify-content: center;
+}
+
+.maxWidth {
+    width: 100%;
+}
+
+.evenMargin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.padding {
+    padding-right: 20px;
+}
+
+.box {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.results {
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.aboutHeader {
+    text-align: center;
+}
+
+.about {
+    -webkit-align-items: center; /* Safari 7.0+ */
+    display: flex;
+    align-items: center;
+}
+
+    .about h4 {
+        padding-top: 13px;
+    }
+
+.textbox {
+    resize: none;
+}
+
+.center {
+    text-align: center;
+}
+
+/****** Style Star Rating Widget - JamesBarnett - CodePen *****/
+
+fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+}
+
+.rating {
+    border: none;
+    float: left;
+}
+
+    .rating > input {
+        display: none;
+    }
+
+    .rating > label:before {
+        margin: 5px;
+        font-size: 1.25em;
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f005";
+    }
+
+    .rating > .half:before {
+        content: "\f089";
+        position: absolute;
+    }
+
+    .rating > label {
+        color: #ddd;
+        float: right;
+    }
+
+    /***** CSS Magic to Highlight Stars on Hover *****/
+
+    .rating > input:checked ~ label, /* show gold star when clicked */
+    .rati1ng:not(:checked) > label:hover, /* hover current star */
+    .rating:not(:checked) > label:hover ~ label {
+        color: #FFD700;
+    }
+        /* hover previous stars in list */
+
+        .rating > input:checked + label:hover, /* hover current star when changing rating */
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+        .rating > input:checked ~ label:hover ~ label {
+            color: #FFED85;
+        }
+
+
+/* Buttons */
+
+.button {
+    background-color: #0E0B16;
+    border-radius: 6px;
+    border: 2px solid #0E0B16;
+    color: #f7f5f4;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 185px;
+    margin: 15px;
+    margin-top: 7px;
+}
+
+    .button:hover {
+        background-color: #f7f5f4;
+        color: #0E0B16;
+    }
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+    .disabled:hover {
+        background-color: #0E0B16;
+        color: #f7f5f4;
+    }
+
+.buttonMod {
+    width: 220px;
+}
+
+/* Projects Page Buttons */
+
+.projectButton {
+    background-color: #f7f5f4;
+    border-radius: 6px;
+    border: 2px solid #0E0B16;
+    color: #0E0B16;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    line-height: inherit;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+    .projectButton:hover {
+        background-color: #0E0B16;
+        color: #f7f5f4;
+    }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 12px;
+    padding-left: 35px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active:hover, .collapsible:hover {
+        background-color: #ccc;
+    }
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #f7f5f4;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+
+/* Header Title */
+
+.header {
+    text-align: center;
+}
+
+.title a {
+    text-decoration: none;
+    color: #0E0B16;
+}
+
+    .title a:hover {
+        color: gray;
+    }
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    border-top: solid 2px #0E0B16;
+    padding 0.5em;
+    text-align: center;
+    color: #f7f5f4;
+}
+
+    .footer ul {
+        padding: 0px;
+    }
+
+        .footer ul li {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+    .footer a {
+        font-size: 1em;
+        padding: 0.25em;
+        color: #f7f5f4;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            color: gray;
+        }
+
+/*Desktop Stuff */
+
+@media screen and (min-width: 1000px) {
+
+    .main {
+        padding: 100px;
+        /*margin-left: 15%;
+        margin-right: 15%;*/
+        margin-bottom: 0px;
+        padding-top: 100px;
+    }
+
+    .footer a {
+        text-align: default;
+    }
+
+    /*Images*/
+
+    .block {
+        width: fit-content;
+        margin: auto;
+        height: auto;
+        display: flex;
+        margin: 10px;
+    }
+
+    .text {
+        width: 75%;
+    }
+
+    .picture {
+        height: 100%;
+        width: auto;
+        padding-left: 25px;
+    }
+
+    .objCenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .objHalf {
+        width: 85%;
+        padding: 10px;
+    }
+
+    .projectBlock {
+        width: 100%;
+        height: auto;
+        display: -webkit-inline-box;
+    }
+
+    .projectButton {
+        line-height: 200px;
+        margin-bottom: 0px;
+    }
+}
