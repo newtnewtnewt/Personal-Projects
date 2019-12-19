@@ -1,3 +1,0 @@
-agents(title, year, employer, dob, pseudonyms)
-targets(title, country, activity1, activity2, contact)
-weapons(name, type, mnfct)

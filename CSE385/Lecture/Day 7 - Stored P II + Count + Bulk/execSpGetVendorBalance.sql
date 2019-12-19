@@ -1,1 +1,0 @@
-﻿EXEC spGetVendorsByBalance 100

@@ -1,3 +1,0 @@
-Newt: 687.71
-OtherNewt: 1886.31
-FinalNewt: 714.61

@@ -1,3 +1,0 @@
-long par ;
-int i = getint ( ) ,
-short j = if getint { a } .

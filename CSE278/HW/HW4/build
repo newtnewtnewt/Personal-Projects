@@ -1,2 +1,0 @@
-#!/bin/bash
-g++ -I /usr/include/mysql nsa-db.cpp 278sqla.o -l mysqlclient 
