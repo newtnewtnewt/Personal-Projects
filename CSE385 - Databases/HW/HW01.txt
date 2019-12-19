@@ -1,0 +1,16 @@
+CREATE DATABASE Homework_01
+GO
+CREATE TABLE tblCars(
+	[carID] 	INT		PRIMARY KEY	IDENTITY,
+	[make]		VARCHAR(20)	NOT NULL,
+	[model]		VARCHAR(20) 	NOT NULL,
+	[year]		INT		NOT NULL	DEFAULT 0,
+	[cost]		FLOAT		NOT NULL	DEFAULT 0.0
+)
+GO
+INSERT INTO tblCars(make, model, year, cost)
+VALUES ('Honda', 'Accord', 2016, 22456.99),
+       ('Honda', 'Pilot', 2018, 34589.00),
+       ('Toyota', 'Camry', 2000, 17300.99),
+       ('Subaru', 'Outback', 2018, 33179.00) 
+  
