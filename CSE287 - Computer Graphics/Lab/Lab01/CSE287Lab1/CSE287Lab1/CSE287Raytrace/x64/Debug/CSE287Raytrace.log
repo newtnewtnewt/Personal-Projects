@@ -1,0 +1,10 @@
+﻿  DownwardTriangle.cpp
+  Lab1.cpp
+C:\Users\newtn\Desktop\CSE287Lab1\CSE287Raytrace\DownwardTriangle.cpp(21,18): warning C4244:  'initializing': conversion from 'double' to 'int', possible loss of data
+  MyRectangle.cpp
+C:\Users\newtn\Desktop\CSE287Lab1\CSE287Raytrace\Lab1.cpp(19,35): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+  MySquare.cpp
+  RightwardTriangle.cpp
+  Generating Code...
+C:\Users\newtn\Desktop\CSE287Lab1\CSE287Raytrace\MyRectangle.cpp(1,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
+  CSE287Raytrace.vcxproj -> C:\Users\newtn\Desktop\CSE287Lab1\x64\Debug\CSE287Lab1.exe
