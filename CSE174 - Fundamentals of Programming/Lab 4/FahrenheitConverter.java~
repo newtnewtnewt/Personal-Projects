@@ -1,0 +1,38 @@
+/* Name: Noah Dunn
+ * Instructor: Dr. Alberto-Castro Hernandez
+ * Class: CSE174 Section I
+ * Date: September 22, 2017 
+ * Assignment: Lab 4 
+ * */
+
+
+import java.util.Scanner; 
+
+
+public class FahrenheitConverter{
+  public static void main(String[] main){
+    
+    Scanner temp = new Scanner(System.in);
+    
+    System.out.print("Enter Fahrenheit temperature:");
+    fahrenheitTemp = temp.nextDouble();
+    celciusTemp = (farenheitTemp - 32)(5.0/9.0);
+    
+    if(celciusTemp <= 0){
+      String state = "Solid";
+    }  
+    
+    if(celciusTemp >= 100){
+      String state = "Gas";
+    }
+    
+    if(celciusTemp >0 && celciusTemp <100){
+      String state = "Liquid";
+    }
+    
+    System.out.printf("%.3f Fahrenheit = %.3f Celcius %nWater is %s" fahrenheitTemp, celciusTemp, state;
+
+                        
+  }//end class 
+
+}// end main method 

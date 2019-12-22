@@ -1,0 +1,17 @@
+/* Name: Noah Dunn
+ * Class: CSE 174 Section I
+ * Instructor: Dr. Alberto-Castro Hernandez 
+ * Date: 9/5/2017
+ * Description: Display a Cartoon figure with a speech bubble
+ * */
+
+
+public class Cartoon{
+   
+   public static class main(String args[]){
+      
+   } // End Main method
+  
+}// End Class Cartoon
+      
+      

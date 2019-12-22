@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Lab2{
+
+  public static void main(String args[]){
+    
+    Scanner sc = new Scanner(System.in);
+    
+    int radius = sc.nextInt();
+    int radius2 = sc.nextInt();
+    float fourThirds = 4/3;
+    
+    float sA = 4 * Math.pi * Math.pow(radius, 2); 
+    float v  = (fourThirds) * Math.pi * Math.pow(radius, 3);      
+    
+    System.println("Enter the sphere's radius:"); 
+   
+    
+  } //End main method
+}// end Class

@@ -1,0 +1,20 @@
+/* Name: Noah Dunn
+ * Class: CSE 174 Section I
+ * Instructor: Dr. Alberto-Castro Hernandez 
+ * Date: 9/19/2017
+ * Description: Compute Easter Sunday with an algorithm 
+ * 
+ * */
+ 
+import java.util.Scanner
+   
+   public class EasterSunday{
+   
+      public static void main(String[] args){
+      
+          Scanner year = new Scanner(System.in);
+      
+          y = year.nextInt();
+      
+   } // end of method
+} // end of class
