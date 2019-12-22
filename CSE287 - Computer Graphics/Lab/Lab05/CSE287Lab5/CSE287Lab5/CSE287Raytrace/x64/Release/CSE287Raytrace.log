@@ -1,0 +1,11 @@
+﻿  ImplictSurface.cpp
+  Lab.cpp
+  Plane.cpp
+  RayTracer.cpp
+  Sphere.cpp
+  Generating code
+  113 of 495 functions (22.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  CSE287Raytrace.vcxproj -> C:\Users\newtn\Downloads\CSE287Lab4 (1)\CSE287Lab4\x64\Release\CSE287Raytrace.exe

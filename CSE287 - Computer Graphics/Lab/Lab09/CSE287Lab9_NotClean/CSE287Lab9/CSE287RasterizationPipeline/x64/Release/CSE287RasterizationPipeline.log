@@ -1,0 +1,8 @@
+﻿  Lab.cpp
+C:\Users\newtn\Downloads\CSE287Lab9 (3)\CSE287Lab9\CSE287RasterizationPipeline\Lab.cpp(390,2): warning C4065:  switch statement contains 'default' but no 'case' labels
+  Generating code
+  4 of 768 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  CSE287RasterizationPipeline.vcxproj -> C:\Users\newtn\Downloads\CSE287Lab9 (3)\CSE287Lab9\x64\Release\CSE287RasterizationPipeline.exe
