@@ -1,0 +1,58 @@
+<!--
+* Author: Noah Dunn 
+* Class: CSE 383
+* Exam Question #1
+* With assistance from the following resources:
+* W3 Schools, Dr. Campbell
+https://stackoverflow.com/questions/1637019/how-to-get-the-jquery-ajax-error-response-text
+https://www.tutorialrepublic.com/faq/how-to-check-or-uncheck-a-checkbox-dynamically-using-jquery.php
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.2.0">
+  <title>form1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+  </script>
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+  </script>
+  <script src = "ajaxRun.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid mycenter">
+    <h1>Problem 1</h1>
+    <div id="msg" class='alert alert-info'>Put Messages to user about submit here</div>
+    <div id='formDiv'>
+    <form class= "needs-validation">
+      <div class="form-group">
+        <label for="uid">Field 1</label> <input type='text'
+        name='uid' placeholder="Field 1" required="" id='uid'> <small id=
+        "uidHelp" class="form-text text-muted">This is field 1</small>
+      </div>
+      <div class="form-group">
+        <label for="birthYear">Field 2</label> <input type=
+        'text' name='birthYear' placeholder="Field 2" required="" id='birthYear' />
+        <small class="form-text text-muted">This is field 2</small>
+      </div>
+      </div><input id = "submit" type='submit' name="submit" value="Submit">
+      <input type='hidden' name='cmd' value='submit'>
+    </form>
+  </div>
+  <div style="padding: 20px;">
+  </div>
+  </div>
+</body>
+</html>

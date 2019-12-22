@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--scott campbell
+    cse383 form1 assignment
+  -->
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.2.0">
+  <title>form1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+  <script src=
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+  </script>
+  <script src=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+  </script>
+  <script src = "ajaxRun.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-fluid mycenter">
+    <h1>Student Information Form</h1>
+    <div id="msg" class='alert alert-info'>Put Messages to user about submit here</div>
+    <div id='formDiv'>
+    <form class= "needs-validation">
+      <div class="form-group">
+        <label for="uid">Your Unique ID</label> <input type='text'
+        name='uid' placeholder="Unique ID" required="" id='uid'> <small id=
+        "uidHelp" class="form-text text-muted">This is your Miami
+        ID</small>
+      </div>
+      <div class="form-group">
+        <label for="birthYear">Birth Year</label> <input type=
+        'text' name='birthYear' placeholder="1990" required="" id='birthYear' />
+        <small class="form-text text-muted">Your 4 digit birth
+        year</small>
+      </div>
+      <div class="form-group">
+        <label for="gradYear">Graduation Year</label>
+        <select id="gradYear" name="Graduation">
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="-1">Not Applicable</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cseCheckbox">Check if you are a CSE major</label>
+        <input type='checkbox' class="custom-checkbox" name='cse' id="cseCheckbox">
+        Yes
+      </div>
+      <div class="form-group">
+        <label for="car">Check if you own a car</label>
+        <input type='checkbox' class="custom-checkbox" name='car' id="car">
+        Yes
+      </div>
+      <div class="form-group">
+        <label for="mobileDevices">How many mobile devices do you
+        own?</label> <input type='text' name='mobileDevices'
+        placeholder="0" required="" id="mobileDevices"> <small class=
+        "form-text text-muted">Include phones, fitbits, etc</small>
+      </div>
+      <div class="form-group">
+        <label for="quote">Quote</label> 
+        <textarea rows='2' cols='40' name= 'quote' id="quote">        </textarea>
+      </div>
+      <div class="form-group">
+        <label for="quoteCite">Source</label> <input type='text'
+        name='quoteCite' required="" id="quoteCite"> <small class=
+        "form-text text-muted">A quote you like including who said
+        it</small>
+      </div><input id = "submit" type='submit' name="submit" value="Submit">
+      <input type='hidden' name='cmd' value='submit'>
+    </form>
+  </div>
+  <div style="padding: 20px;">
+  <a href="https://ceclnx01.cec.miamioh.edu/~campbest/cse383-f19-campbest-public/ajax1/form-json.php/api/v1/last" target="_blank">Latest submissions</a>
+  </div>
+  </div>
+</body>
+</html>
