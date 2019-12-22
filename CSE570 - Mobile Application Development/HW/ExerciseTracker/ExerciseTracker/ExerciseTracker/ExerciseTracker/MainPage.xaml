@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:ExerciseTracker"
+             mc:Ignorable="d"
+             x:Class="ExerciseTracker.MainPage">
+    
+    <TabbedPage.SelectedTabColor>
+        #FFF7B6
+    </TabbedPage.SelectedTabColor>
+    <TabbedPage.BarBackgroundColor>
+        #ABC585
+    </TabbedPage.BarBackgroundColor>
+    <TabbedPage.UnselectedTabColor>
+        #B48A57
+    </TabbedPage.UnselectedTabColor>
+    <!-- Change the default selected tab color -->
+    <!-- Change the color of the bar's background color -->
+    <!-- Change the color of the unselected indicies -->
+    <!-- Electing to Split this up into seperate pages -->
+    <local:AgeGrade Title="AgeGrade" BackgroundColor="#FFF7B6"/>
+    <local:LogPage Title="Log"       BackgroundColor="#FFF7B6"/>
+    <local:TimerPage Title="Timer"   BackgroundColor="#FFF7B6"/>
+    <local:SettingsPage Title="Settings" BackgroundColor="#FFF7B6" />
+    <local:Predictor Title="Predictor" BackgroundColor="#FFF7B6"/>
+</TabbedPage>
+

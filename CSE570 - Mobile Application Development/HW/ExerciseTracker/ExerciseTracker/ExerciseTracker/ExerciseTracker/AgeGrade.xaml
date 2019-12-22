@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ExerciseTracker.AgeGrade">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Create the first picker on our page, with a white background and 5 options for races-->
+            <Picker BackgroundColor="WhiteSmoke" HeightRequest="50" FontSize="25" x:Name="raceType" SelectedItem="0" SelectedIndexChanged="RaceType_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>1 Mile</x:String>
+                    <x:String>5k</x:String>
+                    <x:String>10k</x:String>
+                    <x:String>Half Marathon</x:String>
+                    <x:String>Marathon</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <!-- Identify what our pickers represent on the page -->
+            <Label FontSize="20" Text="Enter your Race Time:"/>
+            <Label FontSize="20" Text="  Hours  :  Minutes  :  Seconds" HorizontalTextAlignment="Center" TextColor="Black"/>
+            <!-- Format our hour/minute/second pickers -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" BackgroundColor="WhiteSmoke">
+                <Picker VerticalOptions="Center" HeightRequest="100"  SelectedItem="0" SelectedIndexChanged="RaceType_SelectedIndexChanged" FontSize="50" ItemsSource="{Binding Hours}" Margin="25,0,0,0" WidthRequest="70" x:Name="raceHour"></Picker>
+                <Label  VerticalOptions="Center" HeightRequest="100"  FontSize="70" Text=":"/>
+                <Picker VerticalOptions="Center" HeightRequest="100"  SelectedItem="0" SelectedIndexChanged="RaceType_SelectedIndexChanged" FontSize="50" WidthRequest="70" ItemsSource="{Binding Minutes}" x:Name="raceMinutes"></Picker>
+                <Label  VerticalOptions="Center" HeightRequest="100" FontSize="70" Text=":"/>
+                <Picker VerticalOptions="Center" SelectedItem="0" SelectedIndexChanged="RaceType_SelectedIndexChanged" FontSize="50" HeightRequest="100" WidthRequest="70" ItemsSource="{Binding Seconds}" x:Name="raceSeconds"></Picker>
+            </StackLayout>
+            <!-- Display our group number in large text-->
+            <Label Text="Group Number: " FontSize="25"/>
+            <Label x:Name="AgeGroup" FontSize="40" TextColor="Black" BackgroundColor="WhiteSmoke" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding GroupCalculation}"  />
+            <!-- Display our age grade in large text -->
+            <Label Text= "Age Grade: " FontSize="25"/>
+            <Label x:Name="AgeGra" FontSize="40" TextColor="Black" BackgroundColor="WhiteSmoke" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="{Binding GradeCalculation }"  />
+            <!-- Text="{Binding GroupCalculation}" Text="{Binding GradeCalculation }" -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

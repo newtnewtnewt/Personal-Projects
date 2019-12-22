@@ -1,0 +1,1 @@
+C:\Users\newtn\source\repos\PatientSymptoms\PatientSymptoms\PatientSymptoms.UWP\PatientSymptoms.UWP.csproj;x86

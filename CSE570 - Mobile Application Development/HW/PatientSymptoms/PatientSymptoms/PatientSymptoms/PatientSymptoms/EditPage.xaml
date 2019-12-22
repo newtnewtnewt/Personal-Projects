@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PatientSymptoms.EditPage"
+             Title="Update or Delete your Record"
+             BackgroundColor="#F9DDDD">
+    <ContentPage.Content>
+        <!-- This page shells out the UI with pickers that exist in the C# portion-->
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Edit Set Condition:"></Label>
+                    <Picker VerticalOptions="Center" BackgroundColor="White" x:Name="EditConditionList" WidthRequest="100">
+                        <Picker.Items>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Edit Pain Ranking (1-10):"></Label>
+                    <Picker VerticalOptions="Center" BackgroundColor="White" x:Name="EditPainSelection" WidthRequest="50">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                            <x:String>4</x:String>
+                            <x:String>5</x:String>
+                            <x:String>6</x:String>
+                            <x:String>7</x:String>
+                            <x:String>8</x:String>
+                            <x:String>9</x:String>
+                            <x:String>10</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Edit Set Date: "/>
+                    <DatePicker VerticalOptions="Center" BackgroundColor="White" x:Name="EditDate"></DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Edit Set Time: "></Label>
+                    <TimePicker VerticalOptions="Center" BackgroundColor="White" x:Name="EditTime"></TimePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Edit Set Temperature: "></Label>
+                    <Entry VerticalOptions="Center" BackgroundColor="White" x:Name="EditTemp"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label VerticalOptions="Center" Text="Edit Set Pressure: "></Label>
+                    <Entry BackgroundColor="White" VerticalOptions="Center" x:Name="EditPressure"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button WidthRequest="150" HeightRequest="100" BackgroundColor="#F9CDCD" Text="UPDATE" Clicked="Update_Clicked"></Button>
+                    <Button WidthRequest="150" HeightRequest="100" BackgroundColor="#F9CDCD" Text="DELETE" Clicked="Delete_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

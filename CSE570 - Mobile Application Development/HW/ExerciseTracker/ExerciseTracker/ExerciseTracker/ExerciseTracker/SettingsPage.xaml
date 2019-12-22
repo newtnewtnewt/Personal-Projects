@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ExerciseTracker.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- The first area provides a picker for our gender -->
+            <StackLayout Orientation="Horizontal">
+            <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label  Text="Gender" HorizontalOptions="Start" FontSize="30"></Label>
+                    <Picker BackgroundColor="WhiteSmoke" x:Name="GenderPicker" VerticalOptions="Center" SelectedIndexChanged="Picker_SelectedIndexChanged" WidthRequest="30">
+                    <Picker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <!-- An area for us to pick our Date of Birth -->
+            <StackLayout  HorizontalOptions="End">
+                    <Label Text="Date Of Birth" HorizontalOptions="Center" FontSize="30"></Label>
+                    <DatePicker BackgroundColor="WhiteSmoke" HorizontalOptions="Center"  x:Name="DateOfBirth" DateSelected="DatePicker_DateSelected" WidthRequest="110"></DatePicker>
+            </StackLayout>
+            </StackLayout>
+            <!-- A picture of my dog to complete the necessary image requirement -->
+            <StackLayout HorizontalOptions="FillAndExpand" >
+                <Button BackgroundColor="#94574c" Clicked="Button_Clicked" Text="Credits"></Button>
+            </StackLayout>
+            <Image Source="baxter.jpg" HeightRequest="400" WidthRequest="400"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

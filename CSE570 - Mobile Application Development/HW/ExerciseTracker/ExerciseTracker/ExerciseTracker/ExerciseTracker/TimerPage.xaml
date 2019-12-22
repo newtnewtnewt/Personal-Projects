@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ExerciseTracker.TimerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- A big area showing off our current timer time -->
+            <Label x:Name="timerTime" Text="00:00:00" FontSize="90" TextColor="Black"></Label>
+            <!-- Two big buttons -->
+            <StackLayout VerticalOptions="FillAndExpand"  Orientation="Horizontal">
+                <Button FontSize="60" BackgroundColor="#94574c" x:Name="startTimer" WidthRequest="375" HeightRequest="150" Text="Start" Clicked="StartTimer_Clicked"></Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="FillAndExpand"  Orientation="Horizontal">
+                <Button FontSize="60" BackgroundColor="#94574c" x:Name="stopTimer"  WidthRequest="375" HeightRequest="150" Clicked="StopTimer_Clicked" Text="Stop"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
