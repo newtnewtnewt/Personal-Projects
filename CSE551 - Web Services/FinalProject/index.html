@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+Name: Noah Dunn
+Professor: Dr. Campbell
+Class: CSE 551
+Date: 5/9/2020
+Assignment: Final Project
+With help from: My CSE383 assignment, CSE551 assignments, Dr. Campbell
+https://stackoverflow.com/questions/5127937/how-to-center-canvas-in-html5
+Nick Gerard, for suggesting the use of HTML Zoom
+-->
+<html lang="en">
+	<head>
+		<title> Alexa Robots Final </title>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="robotDrawing.js"></script>
+		<script src="robot.js"></script>
+		<style>
+			.flex-container{
+				display: flex;
+				flex-direction: row;
+			}
+			html { 
+				zoom: 0.6;
+			}
+			canvas {
+				padding-left: 0;
+				padding-right: 10%;
+				margin-left: 30%;
+				margin-right: 20%;
+				display: flex;
+			}
+			h1 {
+				text-align: center;
+			}
+			p {
+				font-size:30px;
+				display: inline;
+			}
+			#bobdiv {
+				background-color: #ff9c91;
+			}
+			#alicediv {
+				background-color: #d7ff91;
+			}
+			.canvasdiv {
+				padding-right: 400px;
+			}
+		</style>
+	</head>
+	<body>
+	<h1> Alexa Robots </h1>
+	<div class = "flex-container">
+		<div class="canvasdiv">
+			<canvas id='canvas' width='1200' height='1200'>
+			</canvas>
+		</div>
+		<div>
+			<div id="bobdiv">
+			<p id="bobtag"> </p>
+			</div>
+			<br /> 
+			<br /> 
+			<div id="alicediv">
+			<p id="alicetag"> </p>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

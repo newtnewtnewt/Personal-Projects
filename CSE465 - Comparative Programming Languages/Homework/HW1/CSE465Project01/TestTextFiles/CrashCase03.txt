@@ -1,0 +1,4 @@
+INT intVar1 ;
+INT intVar2 ;
+intVar2 = 9 ;
+intVar2 += intVar1 ;

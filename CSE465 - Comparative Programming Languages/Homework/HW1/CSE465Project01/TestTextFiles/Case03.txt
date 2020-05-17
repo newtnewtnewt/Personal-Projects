@@ -1,0 +1,10 @@
+BOOL z ;
+z = true ; 
+PRINT z ; 
+INT x ;
+x = 3 ;
+PRINT x ;
+STRING y ;
+y = "string" ;
+PRINT y ;
+PRINT 3 ;

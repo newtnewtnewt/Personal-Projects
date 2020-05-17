@@ -1,0 +1,3 @@
+aws lambda update-function-code --function-name HelloWorld1 --zip-file fileb://helloworld1.zip
+
+

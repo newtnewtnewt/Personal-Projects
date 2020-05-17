@@ -1,0 +1,25 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://meyerjm-451-s20-bucket1.s3.amazonaws.com/gradProject/index.html",
+  "scripts": {
+    "start": "parcel serve index.html",
+    "build": "tsc --noEmit && parcel build index.html --public-url /gradProject",
+    "dist": "aws s3 sync dist s3://meyerjm-451-s20-bucket1/gradProject --acl public-read"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "bootstrap": "^4.5.0",
+    "bootstrap-icons": "^1.0.0-alpha3",
+    "jquery": "^3.5.1",
+    "libphonenumber-js": "^1.7.51",
+    "lodash": "^4.17.15",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.38",
+    "@types/lodash": "^4.14.150",
+    "typescript": "3.8.3"
+  }
+}

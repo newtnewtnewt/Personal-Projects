@@ -1,0 +1,23 @@
+INT x ;
+x = 1 ;
+INT y ; 
+y = 2 ; 
+x = y ; 
+PRINT x ;
+PRINT y ;
+STRING xx ; 
+xx = "2" ; 
+STRING yy ;
+yy = "3" ;
+yy = xx ;
+PRINT xx ; 
+PRINT yy ;
+BOOL xxx ;
+BOOL yyy ; 
+xxx = TRUE ; 
+yyy = FALSE ;
+xxx = yyy ;
+PRINT xxx ; 
+PRINT yyy ;
+
+

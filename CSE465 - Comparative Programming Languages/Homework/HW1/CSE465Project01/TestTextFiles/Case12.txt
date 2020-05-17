@@ -1,0 +1,7 @@
+INT x ; 
+INT y ; 
+x = 2 ; 
+y = 1 ; 
+FOR 5 x += y ; x += 2 ; FOR 10 x += y ; ENDFOR x += 2 ; x *= 3 ; ENDFOR
+PRINT x ; 
+PRINT y ; 

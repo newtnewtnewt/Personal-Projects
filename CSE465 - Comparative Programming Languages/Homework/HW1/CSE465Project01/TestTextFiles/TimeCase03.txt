@@ -1,0 +1,8 @@
+STRING x ;
+x = "Hello" ; 
+STRING y ; 
+y = "World" ; 
+String z ;
+z = "" ;
+FOR 100 FOR 50 FOR 10 z += x ; z += y ; ENDFOR ENDFOR ENDFOR
+

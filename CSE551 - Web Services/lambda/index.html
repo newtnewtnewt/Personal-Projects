@@ -1,0 +1,63 @@
+
+<!--
+Name: Noah Dunn 
+Instructor: Dr. Scott Campbell
+Class: CSE 551
+Date: 4/24/2020
+Assignment: Lambda-1
+With assistance from:
+Dr. Campbell, 
+My Previous CSE383 work,
+My Previous CSE451 work,
+W3 Schools, and the Following:
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<!-- The body of text establishing our string encoding and the version of bootstrap we are using -->
+    <title>Lambda Intro</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src = "script.js" type="text/javascript"></script>
+  </head>
+  
+  <body>
+	<!-- Using a header jumbotron in order to achieve desired look -->
+	<div class="page-header" style="margin-top:0px;background-color:#DAF7A6;">
+	 <div class="jumbotron" style="text-align:center;background-color:#DAF7A6;">
+		<h1>Movies, Years, and Comments</h1>	
+	</div> <!-- This ends the jumbotron tag -->
+	</div>
+	<!-- This kicks off our grid object -->
+	<div class="container">
+	  <div class="row">
+		<div class="col-lg-1">
+		</div> 
+		<div class="col-lg-10">
+			<div id="msg"  class="alert alert-info" style="display:none"></div>
+				<label for="yearInput">Input a Year:</label>
+				<input type="text" id="yearInput">
+				<input type="submit" id="yearSearch">
+			<h1 style="text-align:center;" id="yearVal"></h1>
+			<table id="keys" class="table">
+			  <tr>
+				<th>Title</th>
+				<th>Genre(s)</th>
+				<th>Plot</th>
+				<th>Comments</th>
+				<th>Comment Section</th>
+				<th>Add Button</th>
+			  </tr>		 
+			  <tbody id="tableContent">
+			  <tr><td>TRON</td><td style="width:400px;">Great</td><td><textarea rows="4" cols="50" style="resize:none" id="trontextarea"></textarea></td><td><button style="width:50px;height:25px;"> Add </button></td></tr>
+			  </tbody>
+			</table>
+		</div>
+		<div class="col-lg-1">
+		</div> <!-- This ends the first left column block -->
+		</div>
+		</div>
+  </body>
+  </html>
