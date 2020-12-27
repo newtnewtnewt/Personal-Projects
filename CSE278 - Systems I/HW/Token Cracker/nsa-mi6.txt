@@ -1,4 +1,0 @@
-Laptop(model, speed, ram, hd, screen, price)
-PC(model, speed, ram, hd, price)
-Printer(model, color, type, price)
-Product(maker, model, type)

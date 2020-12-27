@@ -1,0 +1,180 @@
+define host {
+   use linux-server
+   host_name loadbalancer
+   alias Ubuntu Host
+   address 54.221.160.81
+   register 1
+}
+define service {
+   host_name loadbalancer
+   service_description PING
+   check_command check_ping!100.0,20%!500.0,60%
+   max_check_attempts 2
+   check_interval 2
+   retry_interval 2
+   check_period 24x7
+   check_freshness 1
+   contact_groups admins
+   notification_interval 2
+   notification_period 24x7
+   notifications_enabled 1
+   register 1
+}
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancer
+        service_description     HTTP
+        check_command   check_http
+    register 1
+        }
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancer
+        service_description ssh
+        check_command   check_ssh
+    register 1
+        }
+define host {
+   use linux-server
+   host_name loadbalancee1
+   alias Ubuntu Host
+   address 3.91.33.9
+   register 1
+}
+define service {
+   host_name loadbalancee1
+   service_description PING
+   check_command check_ping!100.0,20%!500.0,60%
+   max_check_attempts 2
+   check_interval 2
+   retry_interval 2
+   check_period 24x7
+   check_freshness 1
+   contact_groups admins
+   notification_interval 2
+   notification_period 24x7
+   notifications_enabled 1
+   register 1
+}
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee1
+        service_description     HTTP
+        check_command   check_http
+    register 1
+        }
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee1
+        service_description ssh
+        check_command   check_ssh
+    register 1
+        }
+define host {
+   use linux-server
+   host_name loadbalancee2
+   alias Ubuntu Host
+   address 3.94.146.153
+   register 1
+}
+define service {
+   host_name loadbalancee2
+   service_description PING
+   check_command check_ping!100.0,20%!500.0,60%
+   max_check_attempts 2
+   check_interval 2
+   retry_interval 2
+   check_period 24x7
+   check_freshness 1
+   contact_groups admins
+   notification_interval 2
+   notification_period 24x7
+   notifications_enabled 1
+   register 1
+}
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee2
+        service_description     HTTP
+        check_command   check_http
+    register 1
+        }
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee2
+        service_description ssh
+        check_command   check_ssh
+    register 1
+        }
+define host {
+   use linux-server
+   host_name loadbalancee3
+   alias Ubuntu Host
+   address 52.204.180.6
+   register 1
+}
+define service {
+   host_name loadbalancee3
+   service_description PING
+   check_command check_ping!100.0,20%!500.0,60%
+   max_check_attempts 2
+   check_interval 2
+   retry_interval 2
+   check_period 24x7
+   check_freshness 1
+   contact_groups admins
+   notification_interval 2
+   notification_period 24x7
+   notifications_enabled 1
+   register 1
+}
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee3
+        service_description     HTTP
+        check_command   check_http
+    register 1
+        }
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee3
+        service_description ssh
+        check_command   check_ssh
+    register 1
+        }
+define host {
+   use linux-server
+   host_name loadbalancee4
+   alias Ubuntu Host
+   address 54.226.74.220
+   register 1
+}
+define service {
+   host_name loadbalancee4
+   service_description PING
+   check_command check_ping!100.0,20%!500.0,60%
+   max_check_attempts 2
+   check_interval 2
+   retry_interval 2
+   check_period 24x7
+   check_freshness 1
+   contact_groups admins
+   notification_interval 2
+   notification_period 24x7
+   notifications_enabled 1
+   register 1
+}
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee4
+        service_description     HTTP
+        check_command   check_http
+    register 1
+        }
+define service{
+        use             generic-service         ; Inherit default values from a template
+        host_name               loadbalancee4
+        service_description ssh
+        check_command   check_ssh
+    register 1
+        }

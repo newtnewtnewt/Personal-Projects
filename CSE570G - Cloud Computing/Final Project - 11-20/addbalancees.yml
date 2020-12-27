@@ -1,0 +1,51 @@
+---
+-
+  become: true
+  hosts: loadbalancees
+  name: "set up load balancees"
+  tasks:
+    - 
+      name: "install nginx"
+      become: yes
+      apt:
+            name: nginx
+            state: latest
+    -
+      name: "start nginx"
+      service:
+        name: nginx
+        state: started
+    -
+      name: "set ownership for ubuntu"
+      command: chown -R ubuntu /var/www/html
+      become: yes
+    - 
+      name: "set perms for ubuntu"
+      command: chmod -R u+rwx /var/www/html
+      become: yes
+    - name: "set perms for all"
+      command: chmod -R a+r /var/www/html
+      become: yes
+-
+  become: true
+  hosts: loadbalancer
+  name: "set up load balancer"
+  tasks:
+    -
+      name: "stop nginx"
+      service:
+        name: nginx
+        state: stopped
+    -
+      name: "copy config"
+      template:
+        dest: /etc/nginx/nginx.conf
+        src: nginx.conf
+    -
+      name: "start nginx"
+      service:
+        name: nginx
+        state: started
+    
+    
+     

@@ -1,6 +1,0 @@
-INT x ; 
-STRING y ; 
-BOOL z ;
-INT xx ; 
-STRING yy ;
-BOOL zz ;

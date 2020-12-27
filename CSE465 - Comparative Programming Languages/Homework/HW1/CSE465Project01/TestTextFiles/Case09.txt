@@ -1,7 +1,0 @@
-INT x ;
-INT y ; 
-x = 3 ; 
-y = 5 ;
-FOR 10 FOR 5 y += 3 ; ENDFOR ENDFOR
-PRINT x ;
-PRINT y ;

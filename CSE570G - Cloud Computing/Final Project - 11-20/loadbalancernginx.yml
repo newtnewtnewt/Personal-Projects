@@ -1,0 +1,113 @@
+---
+-
+  become: true
+  hosts: loadbalancees
+  name: "set up load balancees"
+  tasks:
+    - 
+      name: "install nginx"
+      become: yes
+      apt:
+            name: nginx
+            state: latest
+    -
+      name: "start nginx"
+      service:
+        name: nginx
+        state: started
+    -
+      name: "set ownership for ubuntu"
+      command: chown -R ubuntu /var/www/html
+      become: yes
+    - 
+      name: "set perms for ubuntu"
+      command: chmod -R u+rwx /var/www/html
+      become: yes
+    - name: "set perms for all"
+      command: chmod -R a+r /var/www/html
+      become: yes
+-
+  become: true
+  hosts: loadbalancer
+  name: "set up load balancer"
+  tasks:
+    - name: "copy id_rsa"
+      template: 
+        dest: /home/ubuntu/.ssh/id_rsa
+        src: /home/dunnnm2/.ssh/id_rsa
+    -
+      name: "stop nginx"
+      service:
+        name: nginx
+        state: stopped
+    -
+      name: "copy config"
+      template:
+        dest: /etc/nginx/nginx.conf
+        src: nginx.conf
+    -
+      name: "start nginx"
+      service:
+        name: nginx
+        state: started
+    -
+      name: "update apt"
+      command: apt-get update -y
+      become: yes
+    -
+      name: "install docker repository"
+      command: apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+      become: yes
+    -
+      name: "add docker gpg key"
+      shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+      become: yes
+    - 
+      name: "set up docker repo"
+      command: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+      become: yes
+    - 
+      name: "install docker"
+      command: apt-get install docker-ce docker-ce-cli containerd.io -y
+      become: yes
+    -
+      name: "add user to docker"
+      command: usermod -aG docker ubuntu
+      become: yes
+    -
+      name: "change permissions"
+      command: chgrp docker /var/run/docker.sock
+      become: yes
+    -
+      name: "Delete existant containers"
+      shell: docker container stop gitlab-runner || true && docker container rm gitlab-runner || true
+      become: yes
+    -
+      name: "install gitlab runner"
+      command: chdir=/home/ubuntu docker run -d --name gitlab-runner --restart always \
+                     -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+                     -v /var/run/docker.sock:/var/run/docker.sock \
+                     gitlab/gitlab-runner:latest
+      become: yes
+    - 
+      name: "install python3-pip"
+      command: apt-get install python3-pip -y
+      become: yes
+    - 
+      name: "install necessary packages"
+      command: pip3 install pexpect 
+      become: yes
+    -
+      name: "Start GitLab container"
+      expect:
+          command: docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register 
+          responses:
+                'Please enter the gitlab-ci coordinator URL \(e\.g\. https://gitlab.com/\):': "https://gitlab.csi.miamioh.edu/"
+                'Please enter the gitlab-ci token for this runner:': "kA_QQppzdhkDebRxvSff"
+                'Please enter the gitlab-ci description for this runner:': ""
+                'Please enter the gitlab-ci tags for this runner \(comma separated\):': "aws-tag"
+                'Please enter the executor:.*:': "docker"
+                'Please enter the default Docker image .*:': "gitlab-runner"
+          
+    
+     

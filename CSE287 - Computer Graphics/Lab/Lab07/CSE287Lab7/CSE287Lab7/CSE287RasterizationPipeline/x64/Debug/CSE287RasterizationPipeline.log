@@ -1,5 +1,0 @@
-﻿  Lab.cpp
-C:\Users\newtn\Downloads\CSE287Lab7\CSE287RasterizationPipeline\Lab.cpp(192,2): warning C4065:  switch statement contains 'default' but no 'case' labels
-C:\Users\newtn\Downloads\CSE287Lab7\CSE287RasterizationPipeline\Lab.cpp(216,2): warning C4065:  switch statement contains 'default' but no 'case' labels
-C:\Users\newtn\Downloads\CSE287Lab7\CSE287RasterizationPipeline\Lab.cpp(281,2): warning C4065:  switch statement contains 'default' but no 'case' labels
-  CSE287RasterizationPipeline.vcxproj -> C:\Users\newtn\Downloads\CSE287Lab7\x64\Debug\CSE287RasterizationPipeline.exe

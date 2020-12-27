@@ -1,1 +1,0 @@
-C:\Users\newtn\Downloads\FakeBound-20190926T190202Z-001\FakeBound\SpellFake\SpellFake\SpellFake\SpellFake.UWP\SpellFake.UWP.csproj;x86

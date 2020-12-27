@@ -1,3 +1,0 @@
-INT intVar ;
-intVar = 2 ; 
-intVar += "hello" ;

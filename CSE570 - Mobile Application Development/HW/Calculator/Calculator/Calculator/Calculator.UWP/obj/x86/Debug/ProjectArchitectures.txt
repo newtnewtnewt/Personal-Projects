@@ -1,1 +1,0 @@
-C:\Users\newtn\Downloads\Calculator\Calculator\Calculator\Calculator.UWP\Calculator.UWP.csproj;x86

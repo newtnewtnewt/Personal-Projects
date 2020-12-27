@@ -1,4 +1,0 @@
-INT x ; 
-x = 3 ;
-FOR 5 x += 3 ; ENDFOR ;
-PRINT x ;

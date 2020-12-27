@@ -1,0 +1,36 @@
+#!/bin/bash
+echo "image: newtnewtnewt/dunnnm2finalprojectimage" > .gitlab-ci.yml
+echo " " >> .gitlab-ci.yml
+echo "workflow:" >> .gitlab-ci.yml
+echo "   rules:" >> .gitlab-ci.yml
+echo "         - if: \$CI_MERGE_REQUEST_ID" >> .gitlab-ci.yml
+echo "         - if: \$CI_COMMIT_BRANCH == 'webprod'" >> .gitlab-ci.yml
+echo " " >> .gitlab-ci.yml
+echo "stages:" >> .gitlab-ci.yml
+echo "         - deploy" >> .gitlab-ci.yml
+echo " " >> .gitlab-ci.yml
+echo "distribute_html:" >> .gitlab-ci.yml
+echo "          tags:" >> .gitlab-ci.yml
+echo "                  - aws-tag" >> .gitlab-ci.yml
+echo "          stage: deploy" >> .gitlab-ci.yml
+echo "          script:" >> .gitlab-ci.yml
+echo "                 - echo \"user=\${GITLAB_USER_LOGIN}\"" >> .gitlab-ci.yml
+echo "                 - echo \"Configure SSH-AGENT\"" >> .gitlab-ci.yml
+echo "                 - 'which ssh-agent || ( apt-get update -y && apt-get install  openssh-client -y )'" >> .gitlab-ci.yml
+echo "                 - eval \$(ssh-agent -s)" >> .gitlab-ci.yml
+echo "                 - ssh-add <(echo "\"\$SSH_PRIVATE_KEY\"")" >> .gitlab-ci.yml
+echo "                 - mkdir -p ~/.ssh" >> .gitlab-ci.yml
+echo "                 - '[[ -f /.dockerenv ]] && echo -e \"Host *\\n\\tStrictHostKeyChecking no\\n\\n\" > ~/.ssh/config'" >> .gitlab-ci.yml
+echo "                 - cp /GenerateIndexFile ." >> .gitlab-ci.yml
+echo "                 - ./GenerateIndexFile" >> .gitlab-ci.yml
+publicIPs=$(aws ec2 describe-instances --filter Name=instance.group-id,Values=sg-015a1e18e5c69bdd1 --query "Reservations[*].Instances[*].PublicIpAddress" --output=text | sed -E 's/[[:space:]]+/\n/g'
+)
+for i in $publicIPs; do
+	echo "                 - scp -r * ubuntu@$i:/var/www/html" >> .gitlab-ci.yml
+done
+htmlrootsfiles=$(ls .. | grep \.html)
+for j in $htmlrootsfiles; do
+	echo "                 - tidy \"$j\"" >> .gitlab-ci.yml
+done
+echo "                 - tidy \"index.html\"" >> .gitlab-ci.yml 
+cp .gitlab-ci.yml ..

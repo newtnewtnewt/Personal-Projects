@@ -1,4 +1,0 @@
-aws lambda update-function-code --function-name RobotSkill --zip-file fileb://helloworld1.zip
-
-
-

@@ -1,1 +1,0 @@
-you can sftp to netdisk with this from Linux: "sftp uid@sftp.files.miamioh.edu"

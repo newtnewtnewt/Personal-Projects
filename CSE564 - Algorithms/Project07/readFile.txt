@@ -1,6 +1,0 @@
-dog
-cat
-horse
-horsey
-ham
-hamburger

@@ -1,5 +1,0 @@
-INT x ;
-x = 2 ; 
-INT y ; 
-y = 2 ; 
-FOR 100 FOR 100 FOR 1000 x += y ; y += x ; ENDFOR ENDFOR ENDFOR

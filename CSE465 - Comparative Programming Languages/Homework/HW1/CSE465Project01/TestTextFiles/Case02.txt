@@ -1,7 +1,0 @@
-BOOL z ;
-z = true ; 
-INT x ;
-x = 3 ;
-STRING y ;
-y = "string" ;
-
