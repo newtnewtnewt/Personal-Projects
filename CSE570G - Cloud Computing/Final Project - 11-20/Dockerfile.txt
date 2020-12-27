@@ -1,7 +1,0 @@
-# Use the Stock Ubuntu Image
-FROM ubuntu:18.04
-# Install Needed Packages
-RUN apt-get update && apt-get install sshpass -y
-RUN apt-get install openssh-client -y
-RUN apt-get install tidy -y
-COPY GenerateIndexFile /

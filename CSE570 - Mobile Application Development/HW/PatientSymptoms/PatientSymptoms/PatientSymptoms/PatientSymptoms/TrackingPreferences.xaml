@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PatientSymptoms.TrackingPreferences"
+             Title="Pick Body Parts to Track"
+             BackgroundColor="#F9DDDD">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Select Up To Five" HorizontalOptions="Center" FontSize="24" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Part 1:" FontSize="32" />
+                <Picker BackgroundColor="White" SelectedIndexChanged="PartTracker_SelectedIndexChanged" x:Name="partTrackerOne" WidthRequest="200">
+                    <Picker.Items>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Part 2:" FontSize="32" />
+                <Picker BackgroundColor="White" SelectedIndexChanged="PartTracker_SelectedIndexChanged" x:Name="partTrackerTwo" WidthRequest="200">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Part 3:" FontSize="32" />
+                <Picker BackgroundColor="White" SelectedIndexChanged="PartTracker_SelectedIndexChanged" x:Name="partTrackerThree" WidthRequest="200">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Part 4:" FontSize="32" />
+                <Picker BackgroundColor="White" SelectedIndexChanged="PartTracker_SelectedIndexChanged" x:Name="partTrackerFour" WidthRequest="200">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Part 5:" FontSize="32" />
+                <Picker BackgroundColor="White" SelectedIndexChanged="PartTracker_SelectedIndexChanged" x:Name="partTrackerFive" WidthRequest="200">
+                </Picker>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

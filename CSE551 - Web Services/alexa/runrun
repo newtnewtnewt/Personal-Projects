@@ -1,0 +1,3 @@
+rm helloworld1.zip
+zip -r helloworld1.zip *
+source upload 

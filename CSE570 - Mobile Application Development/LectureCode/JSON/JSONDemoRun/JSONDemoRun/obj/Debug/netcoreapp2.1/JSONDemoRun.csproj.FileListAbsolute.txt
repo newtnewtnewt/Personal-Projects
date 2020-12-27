@@ -1,0 +1,11 @@
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\bin\Debug\netcoreapp2.1\JSONDemoRun.deps.json
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\bin\Debug\netcoreapp2.1\JSONDemoRun.runtimeconfig.json
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\bin\Debug\netcoreapp2.1\JSONDemoRun.runtimeconfig.dev.json
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\bin\Debug\netcoreapp2.1\JSONDemoRun.dll
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\obj\Debug\netcoreapp2.1\JSONDemoRun.csprojAssemblyReference.cache
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\obj\Debug\netcoreapp2.1\JSONDemoRun.csproj.CoreCompileInputs.cache
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\obj\Debug\netcoreapp2.1\JSONDemoRun.AssemblyInfoInputs.cache
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\obj\Debug\netcoreapp2.1\JSONDemoRun.AssemblyInfo.cs
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\bin\Debug\netcoreapp2.1\JSONDemoRun.pdb
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\obj\Debug\netcoreapp2.1\JSONDemoRun.dll
+C:\Users\dunnnm2\source\repos\JSONDemoRun\JSONDemoRun\obj\Debug\netcoreapp2.1\JSONDemoRun.pdb

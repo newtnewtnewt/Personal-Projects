@@ -1,0 +1,14 @@
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\big.txt
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\words.txt
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\items.csv
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\cs.deps.json
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\cs.runtimeconfig.json
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\cs.runtimeconfig.dev.json
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\cs.dll
+C:\Users\dunnnm2\Downloads\cs\cs\bin\Debug\netcoreapp2.1\cs.pdb
+C:\Users\dunnnm2\Downloads\cs\cs\obj\Debug\netcoreapp2.1\cs.csprojAssemblyReference.cache
+C:\Users\dunnnm2\Downloads\cs\cs\obj\Debug\netcoreapp2.1\cs.csproj.CoreCompileInputs.cache
+C:\Users\dunnnm2\Downloads\cs\cs\obj\Debug\netcoreapp2.1\cs.AssemblyInfoInputs.cache
+C:\Users\dunnnm2\Downloads\cs\cs\obj\Debug\netcoreapp2.1\cs.AssemblyInfo.cs
+C:\Users\dunnnm2\Downloads\cs\cs\obj\Debug\netcoreapp2.1\cs.dll
+C:\Users\dunnnm2\Downloads\cs\cs\obj\Debug\netcoreapp2.1\cs.pdb

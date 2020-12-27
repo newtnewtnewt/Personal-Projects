@@ -1,0 +1,33 @@
+Command terminated by signal 2
+7.42
+Command terminated by signal 2
+2.81
+Command terminated by signal 2
+0.23
+Command terminated by signal 2
+0.15
+Command terminated by signal 2
+3.39
+Command terminated by signal 2
+5.48
+Command terminated by signal 2
+0.19
+Command terminated by signal 2
+0.14
+Command terminated by signal 2
+0.14
+Command terminated by signal 2
+0.12
+Command terminated by signal 2
+7.81
+Command terminated by signal 2
+0.18
+Command terminated by signal 2
+0.15
+Command terminated by signal 2
+10.80
+31.31
+31.09
+31.07
+31.25
+30.48

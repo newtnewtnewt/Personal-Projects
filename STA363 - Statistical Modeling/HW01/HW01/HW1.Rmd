@@ -1,0 +1,27 @@
+---
+title: "Homework1"
+author: "Noah Dunn"
+date: "August 30, 2018"
+output: html_document
+---
+##Load the packages
+```{r}
+library(tidyverse)
+library(knitr)
+library(GGally)
+library(ggfortify)
+library(gridExtra)
+library(emmeans)
+library(lindia)
+library(car)
+library(leaps)
+```
+
+##Sys.info() command
+```{r}
+Sys.info()
+```
+##sessionInfo() command
+```{r}
+sessionInfo()
+```

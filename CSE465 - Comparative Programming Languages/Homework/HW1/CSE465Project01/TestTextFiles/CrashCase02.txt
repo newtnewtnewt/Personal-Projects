@@ -1,0 +1,2 @@
+INT intVar ; 
+PRINT intVar ;

@@ -1,0 +1,16 @@
+﻿  Defines.cpp
+  FrameBuffer.cpp
+  Material.cpp
+  TextureCoordinateFunctions.cpp
+  TextureImage.cpp
+  Generating Code...
+  CSE287Common.vcxproj -> C:\Users\newtn\Downloads\CSE287Lab7\x64\Debug\CSE287Common.lib
+  Defines.h
+  FrameBuffer.h
+  HitRecord.h
+  LightSource.h
+  Material.h
+  TextureCoordinateFunctions.h
+  TextureImage.h
+          7 file(s) copied.
+          1 file(s) copied.

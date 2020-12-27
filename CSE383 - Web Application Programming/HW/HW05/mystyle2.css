@@ -1,0 +1,48 @@
+#StuffLiked{
+	border-left: solid limegreen 20px;
+	background-color: #31E9BE;
+}
+.Column{
+  float: right;
+  text-align: left;
+}
+
+.Row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.ImageTag{
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: red;
+}
+.ColumnRightAlign{
+	float:right;
+	clear:left;
+	padding-left: 50px;	
+}
+.ColumnLeftAlign{
+	float:left;
+	clear:right;
+	margin-left: 400px;
+	margin-right: 50px;
+}
+.TextAlignRight{
+	text-align: right;
+	margin-bottom: 650px;
+	font-size: 30px;
+	font-family: "Courier New", Courier, monospace;
+	color: white;
+	background-image: url("https://i93.photobucket.com/albums/l60/dragondack/Campfire.gif");
+}
+.TextAlignLeft{
+	text-align: left;
+	margin-left: 500px;
+	margin-bottom: 800px;
+	margin-right: 100px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 40px;
+	background-color: limegreen;
+	color: white;
+}

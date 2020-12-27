@@ -1,0 +1,23 @@
+to koch :s :stage
+   if :stage = 0 [fd :s stop]
+   koch :s/3 :stage - 1
+   lt 60
+   koch :s/3 :stage - 1
+   rt 120
+   koch :s/3 :stage - 1
+   lt 60
+   koch :s/3 :stage - 1
+end 
+
+to poly :n :s
+ repeat :n[fd :s rt 360/:n]
+end
+
+to square :s
+ repeat 4 [fd :s rt 90]
+end
+
+to tri :s
+  repeat 3[fd :s rt 120]
+end
+

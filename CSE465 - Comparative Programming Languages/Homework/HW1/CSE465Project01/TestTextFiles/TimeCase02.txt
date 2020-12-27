@@ -1,0 +1,8 @@
+BOOL x ;
+x = TRUE ; 
+BOOL y ; 
+y = FALSE ; 
+BOOL z ;
+z = TRUE ;
+FOR 100 FOR 100 FOR 1000 z = x ; z = y ; ENDFOR ENDFOR ENDFOR
+print z ;

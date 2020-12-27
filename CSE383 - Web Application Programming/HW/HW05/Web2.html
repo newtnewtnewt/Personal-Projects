@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--Name: Noah Dunn-->
+<!--Date: 9/16/2019 -->
+<!--Course: CSE383 -->
+<!--Assignment: All About Us Page -->
+<!-- Assistance from https://www.w3schools.com/howto/howto_css_images_side_by_side.asp -->
+<!-- Assistance from https://stackoverflow.com/questions/17175563/how-to-set-paragraph-width-automatically-in-css -->
+<html lang="en">
+	<!-- Begin Header -->
+	<head>
+		<meta charset ="utf-8"/>
+		<link rel ="stylesheet" type="text/css" href="mystyle.css"/>
+		<title>
+		The Life of Noah Dunn
+		</title>
+	</head>
+	<!-- End Header -->
+	<!-- Begin Body-->
+	<body> 
+		<h1> Web 2 Assignment for Noah Dunn </h1>
+		<!-- Begin Div 1: Stuff I like -->
+		<div id='StuffLiked'>
+			<h1>
+				The Stuff I Like
+			</h1>
+			<h2>
+				Noah Dunn 
+			</h2>
+			<!-- Used a unique bullet point notation out of curiousity -->
+			<ul style="list-style-type:hebrew;">
+				<li>PC Gaming</li>
+				<li>Rap + Metal Music</li>
+				<li>Board Games</li>
+				<li>Cooking</li>
+				<li>Systematic Theology</li>
+				<li>Newts</li>
+				<li>My Dog</li>
+			</ul>
+		</div>
+		<!-- End Div 1: Stuff I like -->
+		<!-- Begin Div 2: Images -->
+		<div class = 'Row'>
+			<h2 class='ImageTag'> 
+				Images
+			</h2>
+			<!-- Image sourcing pure relative -->
+			<div class='Column'>
+				<img src="genCon.jpg" alt="A picture of seven young men in a convention hall" style="width:300px;height:300px;">
+				<p>In early August this year, my buddies and I all got to attend the Gencon Board Game Festival
+				in Indianapolis, Indiana. </p>
+				<br>
+			</div>
+				<!-- Image sourcing absolute -->
+			<div class='Column'>
+				<img src="https://www.thesprucepets.com/thmb/TT-a7AGZXvbqAbOqIGbqfyU5OD0=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-523757096-580f91435f9b58564c063908.jpg" style="width:300px;height:300px" alt="A picture of a black newt with a red belly">
+				<p>When I was younger I got to take over the care of my teacher's pet when she retired. Ever since, I have had a fasincation
+				with newts.</p>
+				<br>
+			</div>
+				<!-- Image sourcing using relative pathing -->
+			<div class='Column'>
+				<img src="images/baxter.jpg" style="width:300px;height:300px" alt="A picture of a very cute brown and white dog with his tongue out">
+				<p>We got my dog Baxter a couple years ago, and we still have no idea what actual breed he is. We love him regardless.</p>
+			</div>
+		</div>
+		<br>
+		<!-- End Div 2: Images -->
+		<!-- Begin Div 3: Visits -->
+		<div>
+			<h2 class='ImageTag'>
+				Visits I have taken
+			</h2>
+			<h3 class='ImageTag'> 
+				Florida
+			</h3>
+			<div class ='ColumnRightAlign'>
+				<!-- Florida Block -->
+				<img src="cse383-2.jpg" alt="A group of volunteers standing with hard hats, men and women, with the backdrop of Florida trees">
+				</div>
+				<p class ='TextAlignRight'>My father, a pastor, and my pastor at college went with me and some friends to do some disaster relief in <a href="https://www.pcgov.org/">Panama City, Florida</a>
+				last Winter following Hurricane Michael. Location can be seen <a href="https://www.google.com/maps/place/Panama+City,+FL/@30.2036321,-85.7434916,11z/data=!3m1!4b1!4m5!3m4!1s0x889381562ac66341:0xbf585ed52c4701f3!8m2!3d30.1588129!4d-85.6602058"> here. </a>
+				</p>
+			<h3 class='ImageTag'>
+			Louisville
+			</h3>
+				<!-- Louisville Block -->
+			<div class = 'ColumnLeftAlign'>
+				<img src="bat.jpg" alt= "A giant baseball bat laying against the building">	
+			</div>
+			<div class = 'TextAlignLeft'>
+				<p> 
+				During my Internship in Louisville, Kentucky, my buddy Sam and I walked past the World's Largest Bat in downtown.
+				<a href="https://www.sluggermuseum.com/">Here</a> is more information on the mesueum. Location can be seen <a href="https://www.google.com/maps/place/Louisville+Slugger+Museum+%26+Factory/@38.2570969,-85.7661698,17z/data=!3m1!4b1!4m5!3m4!1s0x886972a13ddaebf7:0xe9ab99d2a343c991!8m2!3d38.2570969!4d-85.7639811">here.</a>
+				</p>
+			</div>
+			<h3 class='ImageTag'>
+				Bonnaroo Music Festival 
+			</h3>
+			<div class ='ColumnRightAlign'>
+				<img src ="theroo.jpg" alt="A large number of tents clustered close together with a sunrise on the horizion">
+			</div>
+			<!-- Bonnaroo Block -->
+			<p class = 'TextAlignRight'>My buddies and I went to Manchester, Tennessee last Summer to serve folks at the Bonnaroo music festival with free food and water 24/7 for the duration of the festival 
+			as part of a collective called "Jesus Tent". Information on <a href="https://www.bonnaroo.com/">Bonnaroo</a> and <a href="https://www.thejesustent.com/">Jesus Tent.</a>
+			Google map location of Manchester, where Bonnaroo is held can be found <a href="https://www.google.com/maps/place/Manchester,+TN+37355/data=!4m2!3m1!1s0x8861686134fd7063:0x9a55edbeed4ae4?sa=X&ved=2ahUKEwigxv2FwNbkAhWTvZ4KHeqjBj0Q8gEwAHoECAsQAQ"> here. </a>
+			</p>
+		</div>
+		<div class = 'ImageTag'>
+			<a href="Web3.html"> Click here to jump to page 2</a>
+		</div>
+		<!-- End Div 3: Visits -->
+	</body>
+	<!-- End Body-->
+</html>

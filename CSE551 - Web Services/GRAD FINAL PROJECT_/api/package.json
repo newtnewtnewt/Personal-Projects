@@ -1,0 +1,13 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "parcel build --target node --bundle-node-modules index.js",
+    "dist": "bash ../scripts/zip-code.sh && bash publish.sh"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.674.0"
+  }
+}

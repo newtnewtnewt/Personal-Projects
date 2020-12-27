@@ -1,0 +1,13 @@
+{
+  "name": "grad-project",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "web",
+    "api",
+    "alexa"
+  ],
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
