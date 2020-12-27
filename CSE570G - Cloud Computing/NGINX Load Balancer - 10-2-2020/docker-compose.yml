@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web1:
+    build: ./web1
+    ports:
+     - "8756:5000"
+  web2:
+    build: ./web2
+    ports:
+     - "8757:5000"
+  web3:
+     build: ./web3
+     ports:
+      - "8758:5000"
+  redis:
+     image: "redis:alpine"
+  nginx:
+     build: ./nginx
+     ports:
+      - "5045:80"
+     depends_on:
+      - web1
+      - web2
+      - web3

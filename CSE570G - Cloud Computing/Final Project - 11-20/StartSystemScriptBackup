@@ -1,0 +1,62 @@
+#!/bin/bash
+# Name: Noah Dunn
+# Professor: Dr. Campbell
+# Class: DevOPS + Cloud Computing
+# Date: 11/7/2020
+# Assignment: Load Balancer Automation
+# Resources: My previous work, Dr. Campbell
+# https://stackoverflow.com/questions/5171901/find-and-replace-in-file-and-overwrite-file-doesnt-work-it-empties-the-file
+
+# Start all the worker processes for the load balancer
+aws ec2 run-instances --image-id ami-0dba2cb6798deb6d8 --count $1 --instance-type t2.micro --key-name dunnnm2-public-key --security-group-ids childprocess 
+# Wait a couple seconds to let all boxes initialize
+totalseconds=$((10+10*$1))
+printf "$totalseconds seconds\n"
+sleep "$totalseconds"s
+# Get the IPs
+printf "Public IPs for Ansible Balancees\n"
+aws ec2 describe-instances --query "Reservations[*].Instances[*].PublicIpAddress" --output=text | sed -E 's/[[:space:]]+/\n/g'
+# Get the Private IPs
+printf "Private IPs for Ansible Balancees\n"
+privIPs=$(aws ec2 describe-instances --query "Reservations[*].Instances[*].PrivateIpAddress" --output=text | sed -E 's/[[:space:]]+/\n/g')
+echo "$privIPs"
+publicIPs=$(aws ec2 describe-instances --query "Reservations[*].Instances[*].PublicIpAddress" --output=text | sed -E 's/[[:space:]]+/\n/g'
+)
+curlIP="curl -ik \"https://external-dns.csi.miamioh.edu/ddns1.php?hkey=ed364e56a3deb059d164dbe63e4a90de&dnsname=dunnnm2.aws\""
+
+# Dynamically Create the Script
+echo "#!/bin/bash" > BoxInstallScript.bash
+echo "apt-get update -y && apt-get install ansible -y" >> BoxInstallScript.bash
+echo "apt-get install nginx -y" >> BoxInstallScript.bash
+echo "echo \"[aws]\" >> /etc/ansible/hosts" >> BoxInstallScript.bash
+echo "echo \"$privIPs\" >> /etc/ansible/hosts" >> BoxInstallScript.bash
+# Inject the nginx.conf file
+echo "echo \"http { \" >  /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \"	upstream children {\" >> /etc/nginx/nginx.conf " >> BoxInstallScript.bash
+for i in $privIPs
+do
+	echo "echo \"		server $i;\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+done
+echo "echo \"	}\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \" \" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \"	server { \" >> /etc/nginx/nginx.conf " >> BoxInstallScript.bash
+echo "echo \"		location / {\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \"			proxy_pass http://children;\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \"		}\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \"	}\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+echo "echo \"}\" >> /etc/nginx/nginx.conf" >> BoxInstallScript.bash
+# Register the DNS
+echo "$curlIP" >> BoxInstallScript.bash
+# Start the Load Balancer Instance
+aws ec2 run-instances --image-id ami-0dba2cb6798deb6d8 --count 1 --instance-type t2.micro --key-name dunnnm2-public-key --security-group-ids default --user-data file://BoxInstallScript.bash
+# Print Load Balancer's Public IP
+printf "Wait 5 seconds\n"
+sleep 5s
+printf "Public IP for Load Balancer:\n"
+aws ec2 describe-instances --filter Name=instance.group-id,Values=sg-479c4f7a --query "Reservations[*].Instances[*].PublicIpAddress" --output=text | sed -E 's/[[:space:]]+/\n/g'
+
+
+
+
+
+

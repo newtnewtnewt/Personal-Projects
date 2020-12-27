@@ -1,0 +1,50 @@
+---
+-
+  become: true
+  hosts: aws
+  name: "install nginx"
+  tasks:
+    -
+      apt:
+        name: nginx
+        state: present
+      name: "install nginx"
+    -
+      name: "copy index"
+      template:
+        dest: /var/www/html/index.html
+        src: /etc/ansible/index.html
+    -
+      name: "start nginx"
+      service:
+        name: nginx
+        state: started
+    -
+      name: "install jre"
+      apt:
+        name: default-jre
+        state: present
+    -
+      name: "install jdk"
+      apt:
+        name: default-jdk
+        state: present
+    -
+      name: "move the jmeter script over"
+      template:
+        dest: /home/ubuntu
+        src: /etc/ansible/ceclnx01.jmx
+    -
+      name: "install jmeter"
+      apt:
+        name: jmeter
+        state: present
+        update_cache: yes
+    -
+      name: "execute jmeter"
+      command: jmeter -n -t /home/ubuntu/ceclnx01.jmx
+    -
+      name: "grab the files"
+      fetch:
+        src:  /home/ubuntu/jmeter.log
+        dest: /etc/ansible/
