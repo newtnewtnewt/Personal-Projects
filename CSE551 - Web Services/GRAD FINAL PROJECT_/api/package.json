@@ -8,6 +8,6 @@
     "dist": "bash ../scripts/zip-code.sh && bash publish.sh"
   },
   "dependencies": {
-    "aws-sdk": "^2.674.0"
+    "aws-sdk": "^2.814.0"
   }
 }
